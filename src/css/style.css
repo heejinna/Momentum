@@ -1,7 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@font-face {
+  font-family: 'Gangitem';
+  src: url('../fonts/Gangitem.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'AppleSDGothicNeoR';
+  src: url('../fonts/AppleSDGothicNeoR.ttf') format('truetype');
+}
+
+:root {
+  --black: #3c3c3c;
+  --white: whitesmoke;
+}
 
 * {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Gangitem', 'AppleSDGothicNeoR', 'san-serif';
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -15,7 +28,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: whitesmoke;
+  background-color: var(--white);
+  /* background-image: url('../images/background.svg');
+  background-size: cover; */
   color: #9b9999;
 }
 
@@ -26,15 +41,40 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: solid 1px #dddddd;
+  /* border: solid 1px #dddddd; */
   border-radius: 10px;
   background-color: white;
 }
 
 #title {
   margin: 5%;
-  font-size: 2.6rem;
-  color: #9b9999;
+  font-size: 4rem;
+  color: var(--black);
+  position: relative;
+  left: 5%;
+}
+
+.ellipse {
+  width: 8%;
+  position: absolute;
+  top: 17%;
+  left: 50%;
+}
+
+input {
+  box-sizing: border-box;
+  position: relative;
+  bottom: 15px;
+}
+
+input[type='text'] {
+  padding: 20px;
+  height: 30px;
+  border: none;
+  outline: none;
+  background-color: var(--white);
+  /* border-radius: 25px 0 0 25px; */
+  border-radius: 20px;
 }
 
 .btn {
@@ -42,17 +82,15 @@ main {
   border: none;
 }
 
+img {
+  width: 70%;
+}
 .add {
-  padding: 0 5px 0 5px;
-  font-size: 1rem;
-  border: solid 1px #9b9999;
-  color: #9b9999;
-  border-radius: 50%;
+  transition: all 0.2s linear;
 }
 
 .add:hover {
-  background-color: #9b9999;
-  color: white;
+  transform: scale(1.2);
 }
 
 #delete {
@@ -65,13 +103,13 @@ ul {
   margin: 5px;
 }
 
-/* @media (max-width: 700px) {
+@media (max-width: 767px) {
   body {
-    background-color: white;
+    background-size: auto;
     padding: 0;
   }
   main {
     width: 100%;
     border: none;
   }
-} */
+}
