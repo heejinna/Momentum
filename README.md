@@ -5,7 +5,7 @@
 
 <br/>
 
-## 🔥 Preview
+## 🎱 Preview
 ![](src/images/preview.png)
 
 <br/>
