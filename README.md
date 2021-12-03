@@ -1,9 +1,12 @@
-<p align="middle">
-<h2 align="middle">JS 투두리스트</h2>
+<p>
+  <h1 align="middle">What's your task today?</h2>
+  <p align="middle">바닐라 자바스크립트로 구현하는 투두리스트</p>
 </p>
 
-<!-- ## 🔥 Preview -->
-<!-- Preview -->
+<br/>
+
+## 🔥 Preview
+![](src/images/preview.png)
 
 <br/>
 
