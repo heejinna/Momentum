@@ -6,7 +6,7 @@
 <br/>
 
 ## 🎱 Preview
-![](src/images/preview.png)
+<!-- preview -->
 
 <br/>
 
