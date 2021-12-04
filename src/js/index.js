@@ -1,21 +1,25 @@
 const $input = document.querySelector('input');
 const $addBtn = document.querySelector('.add');
-const $list = document.querySelector('#list');
+const $todolist = document.querySelector('#todolist');
 
 function addTask(e) {
   e.preventDefault();
-  let value = $input.value;
-  value !== '' ? addContent(value) : alert('please type your task first');
+  const value = $input.value;
+  value !== '' ? addContent(value) : alert('please type your task');
   $input.value = '';
 }
 
 function addContent(value) {
   const $ul = document.querySelector('ul');
   const li = document.createElement('li');
-  const btn = document.createElement('button');
   li.setAttribute('class', 'todo');
+  li.innerText = value;
+  const btn = document.createElement('button');
+  btn.setAttribute('class', 'btn');
+  btn.innerText = '❌';
+  btn.addEventListener('click', deleteTask);
   $ul.appendChild(li);
-  li.innerHTML = `${value}<button id='delete' class='btn' type='button'>X</button>`;
+  li.appendChild(btn);
 }
 
 function deleteTask(e) {
@@ -30,4 +34,3 @@ $input.addEventListener('keyup', (e) => {
     addTask(e);
   }
 });
-$list.addEventListener('click', deleteTask);
