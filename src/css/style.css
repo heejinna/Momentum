@@ -1,20 +1,20 @@
-@font-face {
-  font-family: 'Gangitem';
-  src: url('../fonts/Gangitem.otf') format('opentype');
-}
-
-@font-face {
-  font-family: 'AppleSDGothicNeoR';
-  src: url('../fonts/AppleSDGothicNeoR.ttf') format('truetype');
-}
-
 :root {
   --black: #3c3c3c;
+  --gray: #9b9999;
   --white: whitesmoke;
 }
 
+@font-face {
+  font-family: 'Queensila';
+  src: url('../fonts/Queensila.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AppleSDGothicNeo';
+  src: url('../fonts/AppleSDGothicNeoR.ttf') format('truetype');
+}
+
 * {
-  font-family: 'Gangitem', 'AppleSDGothicNeoR', 'san-serif';
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -22,16 +22,17 @@
 }
 
 body {
+  font-family: 'AppleSDGothicNeo', sans-serif;
   width: 100%;
   height: 100%;
   padding: 5%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--white);
-  /* background-image: url('../images/background.svg');
-  background-size: cover; */
-  color: #9b9999;
+  /* background-color: var(--white); */
+  background-image: url('../images/pattern.svg');
+  background-size: auto;
+  color: var(--gray);
 }
 
 main {
@@ -47,18 +48,15 @@ main {
 }
 
 #title {
-  margin: 5%;
-  font-size: 4rem;
-  color: var(--black);
-  position: relative;
-  left: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 110%;
+  margin: 10%;
 }
 
-.ellipse {
-  width: 8%;
-  position: absolute;
-  top: 17%;
-  left: 50%;
+hr {
+  border: var(--black) 1px solid;
 }
 
 input {
@@ -69,6 +67,7 @@ input {
 
 input[type='text'] {
   padding: 20px;
+  width: 270px;
   height: 30px;
   border: none;
   outline: none;
@@ -85,6 +84,7 @@ input[type='text'] {
 img {
   width: 70%;
 }
+
 .add {
   transition: all 0.2s linear;
 }
@@ -94,22 +94,32 @@ img {
 }
 
 #delete {
+  font-size: 0.7rem;
+  color: grey;
+  margin: 0 0 16px 25px;
+}
+
+#delete:hover {
   color: crimson;
-  margin: 10px;
+}
+
+#list {
+  text-align: left;
+  justify-content: first baseline;
 }
 
 ul {
-  list-style: none;
-  margin: 5px;
+  color: var(--black);
+  font-size: 1rem;
+  list-style: circle;
+  margin: 20px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   body {
-    background-size: auto;
-    padding: 0;
+    padding: 20px;
   }
-  main {
-    width: 100%;
-    border: none;
+  input[type='text'] {
+    width: 230px;
   }
 }
