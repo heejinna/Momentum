@@ -2,8 +2,8 @@ const $input = document.querySelector('input');
 const $addBtn = document.querySelector('.add');
 const $todolist = document.querySelector('#todolist');
 
-function addTask(e) {
-  e.preventDefault();
+function paintToDo(newTask) {
+  newTask.preventDefault();
   const value = $input.value;
   value !== '' ? addContent(value) : alert('please type your task');
   $input.value = '';
@@ -17,20 +17,23 @@ function addContent(value) {
   const btn = document.createElement('button');
   btn.setAttribute('class', 'btn');
   btn.innerText = '❌';
-  btn.addEventListener('click', deleteTask);
+  btn.addEventListener('click', deleteToDo);
   $ul.appendChild(li);
   li.appendChild(btn);
 }
 
-function deleteTask(e) {
-  const li = e.target.parentNode;
+function deleteToDo(task) {
+  const li = task.target.parentNode;
   const ul = li.parentNode;
   ul.removeChild(li);
 }
 
-$addBtn.addEventListener('click', addTask);
-$input.addEventListener('keyup', (e) => {
-  if (e.key === 'Enter') {
-    addTask(e);
-  }
-});
+function init() {
+  $addBtn.addEventListener('click', paintToDo);
+  $input.addEventListener('keyup', (e) => {
+    if (e.key === 'Enter') {
+      paintToDo(e);
+    }
+  });
+}
+init();
